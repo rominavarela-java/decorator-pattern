@@ -7,14 +7,16 @@ public class Shrimp extends CondimentsDecorator {
     Taco taco;
 
     public Shrimp(Taco taco) throws IllegalArgumentException {
-    	if(taco.getSize()!= Size.regular || taco.getSize()!= Size.mega)
+    	if( taco.getSize()== Size.regular || taco.getSize()== Size.mega)
+    		this.taco = taco;
+    	else
     		throw new IllegalArgumentException("illegal shrimp taco size");
         this.taco = taco;
     }
 
     @Override
     public String getDescription() {
-        return taco.getDescription() + " de chorizo";
+        return taco.getDescription() + " de camarón";
     }
 
     @Override
